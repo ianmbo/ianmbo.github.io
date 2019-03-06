@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Satang Jabang</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="logo">
+            <img src="images/banner2.png">
+            <img id="vlag" src="images/senegal.png">
+        </div>
+
+        <div class="navbar">
+            <div id="navthing">
+                <a href="index.html">Home</a>
+                <a href="Stichtingjabang.html">Stichting Satang Jabang</a>
+                 <a href="nieuws.html">Nieuws</a>
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="ToggleDropDown()">Doneren
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="eenmalig.html">Eenmalig doneren</a>
+                        <a href="#">Notariële Akte</a>
+                    </div>
+                </div>
+                <a href="donateurs.html">Donateurs</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+        </div>
+        <div id="achtergrond">
+            <div class="tekst">
+                  <h2>Notariële Akte</h2>
+            <p>
+                Als u structureel aan een goed doel schenk, is het<br>
+                aantrekkelijk om dit in de vorm van een notariële schenking<br>
+                te doen. Daarmee zijn uw schenkingen geheel aftrekbaar<br>
+                van uw belastbaar inkomen. Na de aangifte<br>
+                inkomstenbelasting betaalt de Belastingdienst u een gedeelte<br>
+                terug van de schenking. Via online doneren (schenkservices)<br>
+                kunt u een notariële akte laten opmaken. Wat is een<br>
+                notariële (periodieke) schenking? Een periodieke schenking is<br>
+                een periodieke gelijke schenking, vastgelegd bij de notaris<br>
+                voor minimaal vijf jaar. Dit houdt in dat u voor (minimaal) vijf<br>
+                jaar laat vastleggen aan welk goed doel u jaarlijks een<br>
+                bedrag wilt schenken. 
+                </p>
+                <p>De schenkingen moet gedaan worden<br>
+                aan een door de Belastingdienst als zodanig aangemerkte<br>
+                algemeen nut beogende instelling. De Stichting Kafoutine is<br>
+                door de belastingdienst als zodanig aanngemerkt. Voordeel<br>
+                voor u en het goede doel met een schenking via een<br>
+                notariële akte kunt u het bedrag volledig aftrekken van uw<br>
+                belastbare inkomen. Afhankelijk van uw inkomen en leeftijd<br>
+                ontvangt u 16% tot 52% van de schenking terug. Het goede<br>
+                doel is verzekerd van financiële steun en u bent verzekerd<br>
+                van een belastingaftrek. De voorwaarden voor een<br>
+                succesvolle inkomstenbelastingaftrek.
+            </p>
+            </div>
+            <div id="video">
+                <select id="change-video-select" onchange="selectVideo();">
+                    <option selected="selected">Selecteer een video</option>
+                    <option value=1>
+                        Video 1
+                    </option>
+                    <option value=2>
+                        Video 2
+                    </option>
+                </select>
+                <video width="300" height="200" controls id="video1" src="video/SatangJabangAgriculturevideo1.mp4" type="video/mp4">
+                </video>
+                <video style='display: none' width="300" height="200" controls id="video2" src="video/SatangJabangTextilevideo2.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="footerblock">
+            <p> Email:  info@stichtingkafountine.com</p>
+            <p> Telefoon: 0645701582</p>
+        </div>
+        <div class="footerblock">
+            <p>Adres:Kafountine, Senegal</p>
+            <p>Telefoon: +221 77 521 29 30</p>
+        </div>
+        <div class="footerblock last"><a id="LinkMBO" href="../../www.idcollege.nl/index.html">
+                <p>MBORijland</p>
+            </a>
+            <p>Ian Greve</p>
+
+        </div>
+
+    </footer>
+
+    <script>
+        function selectVideo() {
+            var value = document.getElementById("change-video-select").value;
+            switch (value) {
+                case '1':
+                    document.getElementById("video1").style.display = 'block';
+                    document.getElementById("video2").pause();
+                    document.getElementById("video2").style.display = 'none';
+                    break;
+                case '2':
+                    document.getElementById("video1").style.display = 'none';
+                    document.getElementById("video1").pause();
+                    document.getElementById("video2").style.display = 'block';
+                    break;
+            }
+        }
+
+        function ToggleDropDown() {
+
+            var childnodes = document.getElementsByClassName("dropdown")[0].childNodes;
+
+            for (var i = 0; i < childnodes.length; i++) {
+                if (childnodes[i].className == "dropdown-content") {
+                    childnodes[i].style.display = "inline";
+                }
+            }
+        }
+
+        window.onclick = function(e) {
+            if (!e.target.matches('.dropbtn')) {
+                var childnodes = document.getElementsByClassName("dropdown")[0].childNodes;
+
+                for (var i = 0; i < childnodes.length; i++) {
+                    if (childnodes[i].className == "dropdown-content") {
+                        childnodes[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

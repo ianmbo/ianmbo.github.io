@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Satang Jabang</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="logo">
+            <img src="images/banner2.png">
+            <img id="vlag" src="images/senegal.png">
+        </div>
+
+        <div class="navbar">
+            <div id="navthing">
+                <a href="index.html">Home</a>
+                <a href="Stichtingjabang.html">Stichting Satang Jabang</a>
+                <a href="nieuws.html">Nieuws</a>
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="ToggleDropDown()">Doneren
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="eenmalig.html">Eenmalig doneren</a>
+                        <a href="notariel.html">Notariële Akte</a>
+                    </div>
+                </div>
+                <a href="#">Donateurs</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+        </div>
+        <div id="achtergrond">
+            <div id="tekstkom">
+                <h2>De ASN Bank</h2>
+                <p>De ASN Bank zet zich in om de duurzaamheid van de samenleving te bevorderen en laat zich daar in haar economisch handelen door leiden. Economische groei mag volgens de ASN Bank niet ten koste gaan van het milieu, de natuur, kwetsbare bevolkingsgroepen of anderszins worden afgewenteld op toekomstige generaties. In Nederland is de ASN Bank sinds 1960 voorloper op het gebied van duurzaam bankieren. De bank is actief op het gebied van beleggen, sparen, betalingsverkeer en duurzame financieringen. De ASN Bank heeft ruim 670.000 klanten en een totaal beheerd vermogen van € 13,6 miljard. </p><p>Via de ASN Foundation ondersteunt de ASN Bank projecten over de hele wereld. Het doel van de ASN Foundation is geld beschikbaar te stellen aan organisaties en projecten om duurzame initiatieven mogelijk te maken. De ASN Bank maakt deel uit van SNS Bank N.V. Meer informatie vindt u op www.asnbank.nl of www.asnbank.nl/foundation. </p>
+            </div>
+        
+            <div class="tekstdon">
+                <h3>Familie Jansen</h3>
+                <p>De familie Jansen heeft voor de derde keer een groot deel van hun spaargeld gedoneerd en daar willen wij als bestuursleden hun heel graag voor danken. Voor meer infomatie over wat de familie Jansen nou allemaal doet, kan uw kijken op <a href="www.google.nl">google.nl</a> </p>
+            </div>
+            <div id="video">
+                <select id="change-video-select" onchange="selectVideo();">
+                    <option selected="selected">Selecteer een video</option>
+                    <option value=1>
+                        Video 1
+                    </option>
+                    <option value=2>
+                        Video 2
+                    </option>
+                </select>
+                <video width="300" height="200" controls id="video1" src="video/SatangJabangAgriculturevideo1.mp4" type="video/mp4">
+                </video>
+                <video style='display: none' width="300" height="200" controls id="video2" src="video/SatangJabangTextilevideo2.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div class="footerblock">
+            <p> Email:  info@stichtingkafountine.com</p>
+            <p> Telefoon: 0645701582</p>
+        </div>
+        <div class="footerblock">
+            <p>Adres:Kafountine, Senegal</p>
+            <p>Telefoon: +221 77 521 29 30</p>
+        </div>
+        <div class="footerblock last"><a id="LinkMBO" href="../../www.idcollege.nl/index.html">
+                <p>MBORijland</p>
+            </a>
+            <p>Ian Greve</p>
+
+        </div>
+
+    </footer>
+
+    <script>
+        function selectVideo() {
+            var value = document.getElementById("change-video-select").value;
+            switch (value) {
+                case '1':
+                    document.getElementById("video1").style.display = 'block';
+                    document.getElementById("video2").pause();
+                    document.getElementById("video2").style.display = 'none';
+                    break;
+                case '2':
+                    document.getElementById("video1").style.display = 'none';
+                    document.getElementById("video1").pause();
+                    document.getElementById("video2").style.display = 'block';
+                    break;
+            }
+        }
+
+        function ToggleDropDown() {
+
+            var childnodes = document.getElementsByClassName("dropdown")[0].childNodes;
+
+            for (var i = 0; i < childnodes.length; i++) {
+                if (childnodes[i].className == "dropdown-content") {
+                    childnodes[i].style.display = "inline";
+                }
+            }
+        }
+
+        window.onclick = function(e) {
+            if (!e.target.matches('.dropbtn')) {
+                var childnodes = document.getElementsByClassName("dropdown")[0].childNodes;
+
+                for (var i = 0; i < childnodes.length; i++) {
+                    if (childnodes[i].className == "dropdown-content") {
+                        childnodes[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
